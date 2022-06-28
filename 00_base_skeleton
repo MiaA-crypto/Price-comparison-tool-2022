@@ -1,0 +1,51 @@
+#program to compare the prices of various food items
+#Base component 
+# V1 
+
+#import library
+
+#set up functions
+
+def not_blank():
+  print("place holder")
+
+
+
+def int_checker():
+  print("place holder")
+  
+
+
+def string_checker():
+  print("place holder")
+
+
+
+def yes_no():
+  print("place holder")
+  
+
+
+def grams_converter():
+  print("place holder")
+
+
+
+def unit_price_calculator():
+  print("place holder")
+  
+
+
+def comparison_function():
+  print("place holder")
+
+
+#setup lists and constants
+item_name=[]
+budget=[]
+unit_price=[]
+yes_no_list=[["yes","y"],["no","n"]]
+
+
+#main
+user_budget=int(input("Please enter your budget: "))
