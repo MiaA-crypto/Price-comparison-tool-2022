@@ -1,0 +1,14 @@
+
+#list to hold item names
+item_list=[]
+
+while exit != " no":
+  #^(will be replaced with yes/no function in future)^
+  item=input("item: ")
+  item_list.append(item)
+  cost=input("cost:")
+  weight=input("weight")
+#cost and weight do not have lists as they will go into the unit cost function
+  exit=input("do you want to input another item?")
+#to check whether item is being appended and to check if the loop is exiting
+print(item_list)
