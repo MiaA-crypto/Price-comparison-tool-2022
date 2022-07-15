@@ -1,0 +1,15 @@
+def int_checker(question, error_message):
+  while True:
+    try:
+      num_input=int(input(question))
+      if num_input > 0:
+        return(num_input)
+      else:
+         print(error_message) 
+    except:
+      print(error_message)
+
+
+
+returned_num = int_checker("Please enter an integer: ", "This is not an integer - please enter an integer: ")
+print(returned_num)
