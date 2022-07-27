@@ -1,0 +1,10 @@
+def unit_price(cost,weight):
+  calculatedprice=cost/weight
+  return(calculatedprice)
+
+
+#main
+cost=int(input("enter cost "))
+weight=int(input("enter weight "))
+unitprice=unit_price(cost,weight)
+print("${:.2f}".format(unitprice))
