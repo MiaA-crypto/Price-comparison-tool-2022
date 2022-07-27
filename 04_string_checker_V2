@@ -1,0 +1,20 @@
+def string_checker(str_question, str_error_message):
+  while True:
+    string_input=input(str_question)
+    
+    x=string_input.isalpha()
+    
+    try:
+      if x == True:
+        return(string_input)
+      else:
+        print(str_error_message)
+    
+    except:
+      print(str_error_message)
+
+
+      
+  
+
+returned_str = string_checker("Please enter an string: ", "This is not an string - please enter an string: ")
