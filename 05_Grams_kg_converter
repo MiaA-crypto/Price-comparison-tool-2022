@@ -1,0 +1,15 @@
+def kg_gram_converter(question):
+  while True:
+    weight=int(input(question))
+    if weight < 1000:
+      kg_weight = weight/1000
+      return(kg_weight)
+    else:
+      return(weight)
+     
+
+
+#main
+
+returned_weight= kg_gram_converter("please enter a weight(no decimal places) ")
+print(returned_weight)
