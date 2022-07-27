@@ -1,0 +1,13 @@
+
+def str_checker(question, error_message):
+  while True:
+    try:
+      str_input=str(input(question)) 
+      return(str_input)
+    except:
+      print(error_message)
+
+
+
+returned_str = str_checker("Please enter an string: ", "This is not an string - please enter an string: ")
+print(returned_string)
