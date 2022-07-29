@@ -1,0 +1,30 @@
+def comparision_function(list,max_age):
+  new_list = []
+  for item in list:
+   if item[1] <= max_age:
+      new_list.append(item[1])
+  x= max_age
+  for item in new_list:
+    if item < x:
+      x = item
+  return(x)
+
+
+#main
+list=[]
+
+max_age=int(input("enter the maximum age "))
+while exit != "no":
+  name=input("enter your name ")
+  age=int(input("enter your age "))
+  list.append([name, age])
+  print(list)
+  exit=input("do you want to input another age?")
+if len(list) ==1:
+  if age > max_age:
+    print("there are no items lower than your max age")
+  else:
+    print(age)
+else:
+  cheapest=comparision_function(list, max_age)
+  print(cheapest)
