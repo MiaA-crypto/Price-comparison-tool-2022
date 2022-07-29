@@ -1,0 +1,24 @@
+def yes_no(question):
+
+           error = "Please enter yes/ no"
+
+           valid = False
+           while not valid:
+
+               response = input(question).lower()
+
+               if response == "no" or response == "n":
+                   return "no"
+               elif response == "yes" or response == "y":
+                   return "yes"
+               else:
+                   print(error) 
+
+
+
+
+
+
+
+for item in range(0,6):
+    want_snacks = yes_no("do you want snacks? ")
