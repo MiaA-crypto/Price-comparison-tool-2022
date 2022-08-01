@@ -1,0 +1,18 @@
+def kg_gram_converter(weight):
+ 
+  kg_weight = weight/1000
+  return(kg_weight)
+   
+
+
+#main
+ask_unit=input("Are you entering a weight in kilograms?")
+if ask_unit =='no':
+  weight= int(input("please enter a weight(no decimal places) "))
+  returned_weight=kg_gram_converter(weight)
+  print(returned_weight)
+else:
+  weight= input("please enter a weight in kilograms ")
+  weight_to_go_in_list= weight.replace('.','')
+  print(weight_to_go_in_list)
+  
