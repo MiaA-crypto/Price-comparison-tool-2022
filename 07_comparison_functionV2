@@ -1,0 +1,9 @@
+
+def comparision_function(list,user_budget):
+  x= list[0][1]
+  name = list[0][0]
+  for item in list:
+    if item[1] < x:
+      x = item[1]
+      name = item[0]
+  return(x,name)
