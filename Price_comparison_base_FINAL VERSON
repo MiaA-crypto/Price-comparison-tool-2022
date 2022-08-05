@@ -1,0 +1,142 @@
+#program to compare the prices of various food items
+#Base component 
+# V3
+
+#import library
+
+#set up functions
+
+def not_blank(question, error):
+  valid = False
+  response=input(question)
+  while not valid:
+    try:
+      if response != "" or response != " ":
+      #checks if response is blank and if it is, print an error
+        print(error)
+    except:
+       return(response)
+
+
+
+def int_checker(question, error_message):
+  while True:
+    num_input=input(question)
+    try:
+      num_input=int(question)
+      return(float (num_input))
+    
+    except ValueError:
+      try:
+        num_input = float(num_input)
+        return(num_input)
+      except:
+        print(error_message)
+    
+  
+
+
+def string_checker(str_question, str_error_message):
+  while True:
+    string_input=input(str_question)
+    string_input=(string_input.replace(' ',''))
+    
+    x=string_input.isalpha()
+    
+    try:
+      if x == True:
+        return(string_input)
+      else:
+        print(str_error_message)
+    
+    except:
+      print(str_error_message)
+
+
+    
+
+
+
+def yes_no(question):
+  error = "Please enter yes/ no"
+  valid = False
+  while not valid:
+    response = input(question).lower()
+    if response == "no" or response == "n":
+      return "no"
+    elif response == "yes" or response == "y":
+      return "yes"
+    else:
+      print(error) 
+
+
+
+
+
+
+
+  
+
+
+def grams_converter(weight):
+  kg_weight = weight/1000
+  return(kg_weight)
+    
+     
+
+
+
+
+def unit_price_calculator(cost,weight):
+  calculatedprice=(cost/weight)
+  return(calculatedprice)
+ 
+  
+
+
+def comparision_function(list,user_budget):
+  x= list[0][1]
+  name = list[0][0]
+  for item in list:
+    if item[1] < x:
+      x = item[1]
+      name = item[0]
+  return(x,name)
+
+
+
+#main
+
+
+#setup lists and constants
+
+   
+item_name=[]
+yes_no_list=[["yes","y"],["no","n"]]
+item_list=[]
+
+
+#main
+user_budget=int(int_checker("Please enter your budget: $","invalid input, please enter a number or a decimal"))
+while exit != "no":
+  item=string_checker("item: ", "invalid input, please enter a string")
+  cost=int_checker("cost: $","invalid input please enter a number")
+  ask_unit=yes_no("Are you entering a weight in kilograms? ")
+  
+  if ask_unit =='no':
+    weight=int_checker("please enter a weight in grams ","invalid input, please enter a valid number")
+    weight=grams_converter(weight)
+  else:
+    weight=int_checker("please enter a weight in kilograms ","invalid input please enter a valid number")
+    
+
+    
+  unit_price=unit_price_calculator(cost,weight)
+  item_list.append([item,unit_price])
+  exit=yes_no("do you want to input another item? ")
+  
+
+cheapest,cheap_item=comparision_function(item_list,user_budget)
+print("The best value item for your budget is {} at ${:.2f} per kilogram".format(cheap_item,cheapest))
+    
+    
